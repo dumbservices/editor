@@ -1,0 +1,21 @@
+{
+  "name": "editor",
+  "version": "0.0.0",
+  "description": "Browser based web development POC",
+  "main": "n/a",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "@dumbservices <reallydumbservices@gmail.com>, @fitsum <fitsumbelay@gmail.com> (https://fitsum.info/)",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^11.0.0"
+  }
+}

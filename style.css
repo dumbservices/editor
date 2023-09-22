@@ -1,0 +1,27 @@
+html,
+body,
+main,
+textarea {
+  height: 100vh;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+main div.editor {
+  width: calc(100%/3);
+}
+
+main div.viewport {
+  width: calc(100% * 3/s)
+}
+
+textarea {
+  width: 100%;
+  background-color: #ccc;
+}
