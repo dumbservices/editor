@@ -49,7 +49,7 @@ main{
   height: calc(100%/3);
   /* background: transparent; */
   color: var(--theme-uno-viewport-color);
-  font-size: .6rem;
+  font-size: .65rem;
   padding: .5rem;
   resize: none;
   transition: .2s all;
