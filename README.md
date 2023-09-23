@@ -1,17 +1,26 @@
 # BROWSER-EDITOR
 - Browser based sketching wrapped in a ghapp 👻
 
-## TODO POC
-- find limits of html rendering
-- find limits of css rendering
-- find limits of js rendering
-- use keyup instead of input
-- wrap in ghapp
+## TODO MVP
+- TODO APP
+- TODO UI
+- TODO SERVICE
 
-## TODO SCRIPT
+## TODO APP
+- find limits of html, css, js rendering
 - update vars to avoid editor collision: script, style
+- how to set viewport background color
+  - replace('body {','main {')
+- wrap in ghapp
+  - save-to-link functionality a la notesy
 
 ## TODO UI
-- subtle :focus styling
-- resize editor column width
-- stack editors for HTML, CSS, JS
+- textarea resizable for small screens
+- subtle :focus styling for editors
+- resizable editor/viewport column width
+- light/dark theme
+  - background, color, :focus background, :focus color
+
+## TODO SERVICE
+- nodejs based for lint, format and syntax hilight
+- spawn ghapp
