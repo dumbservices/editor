@@ -2,7 +2,11 @@
   --fonts-system:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 21px;
   font-family: var(--fonts-system);
-
+  --theme-uno-viewport-bg-color:  linear-gradient(hsl(0,0%,10%), hsl(0,0%,12%));
+  --theme-uno-viewport-color:  #ddd;
+  --theme-uno-editor-focus-bg-color:  #234;
+  --theme-uno-editor-focus-color:  yellow;
+ 
 }
 
 html,body,main,textarea{
@@ -11,7 +15,6 @@ html,body,main,textarea{
   margin: 0;
   box-sizing: border-box;
 }
-
 
 html,
 body,
@@ -25,6 +28,11 @@ main,
   display: flex;
 }
 
+main,
+textarea{
+  background: var(--theme-uno-viewport-bg-color);
+}
+
 main{
   flex-flow: row wrap;
 }
@@ -32,18 +40,26 @@ main{
 .editor{
   display: flex;
   flex-flow: column wrap;
-}
-
-main .editor {
   width: calc(100%/3);
+  z-index: 2;
 }
 
 .editor textarea {
   width: 100%;
   height: calc(100%/3);
-  background-color: #ccc;
+  /* background: transparent; */
+  color: var(--theme-uno-viewport-color);
   font-size: .6rem;
   padding: .5rem;
+  resize: none;
+  transition: .2s all;
+}
+
+.editor textarea:focus {
+  outline: 0;
+  background: var(--theme-uno-editor-focus-bg-color);
+  color: var(--theme-uno-editor-focus-color);
+  /* border: solid .06rem #484; */
 }
 
 
