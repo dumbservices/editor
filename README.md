@@ -3,8 +3,9 @@
 
 ## TODO POC
 - find limits of html rendering
-- demo CSS input
+- find limits of css rendering
 - demo JS input
+- wrap in ghapp
 
 
 ## TODO UI
