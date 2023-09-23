@@ -40,7 +40,7 @@ main .editor {
 
 .editor textarea {
   width: 100%;
-  height: calc(100%/2);
+  height: calc(100%/3);
   background-color: #ccc;
   font-size: .6rem;
   padding: .5rem;
@@ -48,5 +48,5 @@ main .editor {
 
 
 main div.viewport {
-  width: calc(100% * 3/s)
+  width: calc(100% * 2/3)
 }
