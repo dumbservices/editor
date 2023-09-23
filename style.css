@@ -1,35 +1,52 @@
 :root {
+  --fonts-system:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 21px;
+  font-family: var(--fonts-system);
+
 }
 
-
-html,
-body,
-main,
-textarea {
-  height: 100vh;
+html,body,main,textarea{
   padding: 0;
   border: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-main {
+
+html,
+body,
+main,
+.editor {
+  height: 100vh;
+}
+
+main,
+.editor {
   display: flex;
+}
+
+main{
   flex-flow: row wrap;
 }
 
-main div.editor {
+.editor{
+  display: flex;
+  flex-flow: column wrap;
+}
+
+main .editor {
   width: calc(100%/3);
 }
 
-main div.viewport {
-  width: calc(100% * 3/s)
-}
-
-textarea {
+.editor textarea {
   width: 100%;
+  height: calc(100%/2);
   background-color: #ccc;
   font-size: .6rem;
   padding: .5rem;
+}
+
+
+main div.viewport {
+  width: calc(100% * 3/s)
 }
