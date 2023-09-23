@@ -66,3 +66,8 @@ main{
 main div.viewport {
   width: calc(100% * 2/3)
 }
+
+
+main div.viewport {
+  width: calc(100% * 3/s)
+}
