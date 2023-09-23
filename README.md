@@ -1,5 +1,5 @@
 # BROWSER-EDITOR
-- Browser based sketching
+- Browser based sketching wrapped in a ghapp 👻
 
 ## TODO POC
 - find limits of html rendering
