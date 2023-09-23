@@ -6,20 +6,28 @@ const editors = [ editHTML, editCSS, editJS ]
 const style = $( 'style.editable' )
 const viewport = $( '.viewport' )
 
-const initHTML = '<div id="test">hello world</div>'
+const toggleFullscreen = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()
+
+const initHTML = '<button id="test">🎚 Toggle Fullscreen</button>'
 const initCSS = `
 .viewport {
   display: grid;
   place-items: center;
 }
 
-#test {
-  background: red;
-  padding: 10px;
+button {
+  appearance: none;
+  background: gray;
+  border: none;
   color: white;
+  border-radius: .5rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
   font-family: inherit;
+  cursor: pointer;
 }`
-const initJS = 'console.log($(\'#test\').textContent, new Date().toLocaleString())'
+
+const initJS = `$("button").addEventListener("click", ${ toggleFullscreen } )`
 
 const contentify = function ( target, content ) { target.innerHTML = content }
 const scriptify = function ( content ) {
