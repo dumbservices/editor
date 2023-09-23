@@ -1,22 +1,42 @@
 const $ = sel => document.querySelector( sel )
-const editor = $( '.editor textarea' )
+const editHTML = $( '.editor .html' )
+const editCSS = $( '.editor .css' )
+const editors = [ editHTML, editCSS ]
+const style = $( 'style.editable' )
 const viewport = $( '.viewport' )
 
-const initEditorCode = '<div style="background:red;padding:10px;color: white;font-family:sans-serif">hello world</div>'
+const initHTML = '<div id="test">hello world</div>'
+const initCSS = `#test {
+  background: red;
+  padding: 10px;
+  color: white;
+  font-family: inherit;
+}`
 
 const contentify = function ( target, content ) { target.innerHTML = content }
 
 const handleEditorInput = e => {
-  contentify( viewport, e.target.value )
+  switch ( true ) {
+    case e.target.classList.contains( 'html' ): {
+      contentify( viewport, e.target.value )
+      break
+    }
+    case e.target.classList.contains( 'css' ): {
+      contentify( style, e.target.value )
+      break
+    }
+  }
   /* const domified = new DOMParser().parseFromString( content, 'text/html' ) */
 }
 
-editor.addEventListener( 'input', handleEditorInput )
+editors.forEach( editor => editor.addEventListener( 'input', handleEditorInput ) )
 
 const init = () => {
-  editor.focus()
-  editor.value = initEditorCode
-  contentify( viewport, initEditorCode )
+  editHTML.focus()
+  editHTML.value = initHTML
+  contentify( viewport, initHTML )
+  editCSS.value = initCSS
+  contentify( style, initCSS )
 }
 
 document.addEventListener( 'DOMContentLoaded', init )
