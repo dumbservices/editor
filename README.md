@@ -10,17 +10,22 @@
 - find limits of html, css, js rendering
 - update vars to avoid editor collision: script, style
 - how to set viewport background color
-  - replace('body {','main {')
+  - replace('body {','main {') or just set body rules
 - wrap in ghapp
   - save-to-link functionality a la notesy
 
 ## TODO UI
+- toggle text area UI (format, ...) by pointering toward corners
+- config UI
+  - set sketch title
+  - ...
 - textarea resizable for small screens
-- subtle :focus styling for editors
 - resizable editor/viewport column width
-- light/dark theme
-  - background, color, :focus background, :focus color
+- theme
+  - add light theme
+  - add toggle
 
 ## TODO SERVICE
-- nodejs based for lint, format and syntax hilight
+- nodejs app for lint, format and syntax hilight
+  - run as bash binary?
 - spawn ghapp
