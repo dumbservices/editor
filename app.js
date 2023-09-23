@@ -7,15 +7,19 @@ const style = $( 'style.editable' )
 const viewport = $( '.viewport' )
 
 const initHTML = '<div id="test">hello world</div>'
-const initCSS = `#test {
+const initCSS = `
+.viewport {
+  display: grid;
+  place-items: center;
+}
+
+#test {
   background: red;
   padding: 10px;
   color: white;
   font-family: inherit;
 }`
-const initJS = `
-  alert()
-`
+const initJS = 'console.log($(\'#test\').textContent, new Date().toLocaleString())'
 
 const contentify = function ( target, content ) { target.innerHTML = content }
 const scriptify = function ( content ) {
@@ -27,6 +31,7 @@ const scriptify = function ( content ) {
 }
 
 const handleEditorInput = e => {
+  e.preventDefault()
   switch ( true ) {
     case e.target.classList.contains( 'html' ): {
       contentify( viewport, e.target.value )
@@ -41,10 +46,9 @@ const handleEditorInput = e => {
       break
     }
   }
-  /* const domified = new DOMParser().parseFromString( content, 'text/html' ) */
 }
 
-editors.forEach( editor => editor.addEventListener( 'input', handleEditorInput ) )
+editors.forEach( editor => editor.addEventListener( 'change', handleEditorInput ) )
 
 const init = () => {
   editHTML.focus()
