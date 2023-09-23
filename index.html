@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <title>editor test</title>
   <link rel="stylesheet" href="style.css" />
+  <style class="editable"></style>
 </head>
 <body>
 <main>
-  <div class="editor"><textarea spellcheck="false"></textarea></div>
+  <div class="editor">
+    <textarea spellcheck="false" class="html"></textarea>
+    <textarea spellcheck="false" class="css"></textarea>
+    <!-- <textarea spellcheck="false" class="html"></textarea> -->
+  </div>
   <div class="viewport"></div>
   <script src="app.js"></script>
 </main>
