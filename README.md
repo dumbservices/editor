@@ -7,11 +7,10 @@
 - TODO SERVICE
 
 ## TODO APP
+- integrate editor line numbers update - editor-update.html
 - Rename Editious -> Synominous, Editor -> Editious
 - auto-set html lang attribute
 - test jsfiddles 🔥
-- line numbers
-  - in progress - https://jsfiddle.net/fitsum/ndapw5x7
 - Keycombos
   - Cltrl-Enter to Run
   - some combo for editor UI like format, lint ...
