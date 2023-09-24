@@ -1,0 +1,114 @@
+<main>
+  <pre class="lines"></pre>
+  <pre class="editor" contenteditable></pre>
+</main>
+
+<style>
+:root{
+	font-family: monospace;
+}
+
+html, body, main {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  transition: all 0.25s;
+}
+
+main > *:focus {
+  outline: none;
+  border: none;
+  overflow-y:hidden;
+}
+
+main:has(>*:focus) {
+  background: #DDD;
+}
+
+.lines {
+  margin-inline-end: 5px;
+  text-align: right;
+  width: 8ch;
+  color: #000;
+  scrollbar-width: none;
+}
+
+.lines::-webkit-scrollbar {
+	display: none;
+}
+
+.editor {
+  padding-inline-end: 10px;
+  color: #666;
+  width:calc(100% - 50px);
+}
+
+.editor,
+.lines {
+  background-color: transparent;
+  overflow-y: scroll;
+  height: 10vh;
+  border: none;
+}
+
+.  
+
+</style>
+
+
+<script>
+$ = s => document.querySelector(s)
+const editor = $('.editor')
+const info = $('.info')
+const lines = $('.lines')
+
+
+const updateLineMarkers = () => {
+  const innerHTML = editor.innerHTML
+  const parsedDOM = new DOMParser().parseFromString(innerHTML, 'text/html')
+  const whichLinebreaks = {
+   'firefox': {linebreaks: ['div','br'], adjust: 0},
+   'chrome': {linebreaks: ['div'], adjust: 1}
+  }
+  let agentName;
+  const agent = navigator.userAgent;
+  switch(true){
+    case agent.includes('Firefox'):
+	agentName = 'firefox'; break;
+	case agent.includes('Chrome'):
+	agentName = 'chrome'; break
+  }
+  
+  console.log({agentName})
+  const {linebreaks, adjust} = whichLinebreaks[agentName]
+  console.log({linebreaks, adjust})
+  const linesCount = linebreaks.reduce((total, el) => total + parsedDOM.querySelectorAll(el).length, 0) + adjust
+    console.log({linesCount})
+
+  const lineMarkers = new Array(linesCount).fill('').reduce((total, _, idx) => total + `${idx + 1}\n`, '')
+  lines.textContent = lineMarkers
+}
+
+
+const matchScroll = e => {
+  const whichSibling = {
+    'lines': 'nextElementSibling',
+    'editor': 'previousElementSibling'
+  }
+
+e.target[whichSibling[e.target.className]].scrollTop = e.target.scrollTop
+}
+
+
+editor.addEventListener('input', () => updateLineMarkers());
+[lines, editor].forEach(ui => ui.addEventListener('scroll', matchScroll))
+
+document.addEventListener('DOMContentLoaded', () => {
+})
+
+</script>
