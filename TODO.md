@@ -21,6 +21,7 @@
   - replace('body {','main {') or just set body rules
 - wrap in ghapp
   - save-to-link functionality a la notesy
+  - base64 encode
 - installable themes
 
 ## TODO UI
