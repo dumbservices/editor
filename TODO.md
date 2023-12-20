@@ -7,9 +7,9 @@
 - TODO SERVICE
 
 ## TODO APP
-- Rename Editious -> Synominous, Editor -> Editious
 - auto-set html lang attribute
 - test jsfiddles 🔥
+  - *https://jsfiddle.net/fitsum/kdt9e3or/ -- event.preventDefault() on submission wouldn't fire*
 - line numbers
   - in progress - https://jsfiddle.net/fitsum/ndapw5x7
 - Keycombos
